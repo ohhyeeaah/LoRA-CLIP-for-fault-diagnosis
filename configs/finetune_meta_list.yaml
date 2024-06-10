@@ -1,0 +1,39 @@
+# ------ root_path/dataset_name ------
+root_path: './$DATA'
+
+
+# ------ Hyperparamters ------
+search_hp: True
+# search_hp: False
+
+search_scale: [50, 25]
+search_step: [200, 20]
+
+init_beta: 8
+init_alpha: 4
+
+
+
+# ------ Basic Config ------
+finetune_method: 'fintune_meta'
+meta_epoch: 100
+# dataset_list: [cwru, hust_bearing, hust_gearbox, lw]
+dataset_list: [hust_gearbox, cwru, xj]
+meta_test_dataset: pu
+shots: 5
+query_shots: 5
+test_shots: 5
+backbone: 'ViT-B/16'
+
+lr: 0.001
+
+# ------ LORA r value, default 0 means do not use LORA ------
+lora_r: 16
+
+# ------ Working Condition Setting ------
+xj_working_condition: [35hz, 37.5hz, 40hz]
+cwru_working_condition: [0hp, 1hp, 2hp, 3hp]
+hust_bearing_working_condition: [65hz, 70hz, 75hz, 80hz]
+hust_gearbox_working_condition: [20hz, 25hz, 30hz, 35hz]
+lw_working_condition: [0load, 2load, 4load, 6load, 8load, 10load]
+pu_working_condition: [N09_M07_F10, N15_M01_F10, N15_M07_F04, N15_M07_F10]

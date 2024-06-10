@@ -1,0 +1,44 @@
+# ------ root_path/dataset_name ------
+root_path: './$DATA'
+
+
+# ------ Load Cache and Features ------
+load_cache: False
+# load_pre_feat: False
+# load_pre_feat_raw: False
+
+# load_cache: True
+load_pre_feat: True
+load_pre_feat_raw: True
+
+
+# ------ Hyperparamters ------
+search_hp: True
+# search_hp: False
+
+search_scale: [50, 50]
+search_step: [200, 20]
+
+init_beta: 1
+init_alpha: 10
+
+# ------ Basic Config ------
+finetune_method: 'fintune_meta'
+dataset: 'hust_bearing'
+# shots: 1
+shots_list: [1, 2, 4, 8, 16]
+backbone: 'ViT-B/16'
+fintune_dataset: 'pu'
+working_condition: [65hz, 70hz, 75hz, 80hz]
+num_classes: 9
+
+lr: 0.001
+augment_epoch: 5
+train_epoch_list: [25, 25, 25, 25, 25]
+# epoch=25 for 1-shot
+# epoch=50 for 2-shot and 4-shot
+# epoch=100 for 8-shot and 16-shot
+
+
+# ------ LORA r value, default 0 means do not use LORA ------
+lora_r: 16

@@ -1,0 +1,46 @@
+# ------ root_path/dataset_name ------
+root_path: './$DATA'
+
+
+# ------ Load Cache and Features ------
+load_cache: False
+# load_pre_feat: False
+# load_pre_feat_raw: False
+
+# load_cache: True
+load_pre_feat: True
+load_pre_feat_raw: True
+
+
+# ------ Hyperparamters ------
+search_hp: True
+# search_hp: False
+
+search_scale: [50, 50]
+search_step: [200, 20]
+
+init_beta: 1
+init_alpha: 10
+
+
+# ------ Basic Config ------
+finetune_method: 'dg'
+Round: 1
+# dataset: hust_bearing
+# dataset: pu
+dataset: lw
+# source_working_condition: [65hz, 70hz, 75hz]
+# source_working_condition: [N15_M01_F10, N15_M07_F04, N15_M07_F10]
+source_working_condition: [0load, 4load, 6load, 8load, 10load]
+# target_working_condition: 80hz
+# target_working_condition: N09_M07_F10
+target_working_condition: 2load
+shots: 16
+backbone: 'ViT-B/16'
+
+lr: 0.001
+augment_epoch: 5
+train_epoch: 25
+
+# ------ LORA r value, default 0 means do not use LORA ------
+lora_r: 16
