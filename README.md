@@ -1,4 +1,4 @@
-# FSAMLKM-for-fault-diagnosis
+# FSAMLM-for-fault-diagnosis
 
 Our code based on [this work](https://github.com/gaopengcuhk/Tip-Adapter)
 
